@@ -15,6 +15,11 @@
     box-sizing: border-box;
 }
 
+body {
+    display: flex;
+}
+
+
 #sidebar-toggle { 
     display: none;
 }
@@ -85,6 +90,7 @@
     position: relative;
     margin-left: 240px;
     transition: margin-left 500ms;
+    width: 100%;
 }
 
 header { 
@@ -379,7 +385,8 @@ tbody tr:nth-child(even) {
     
     .main-content header { 
         left: 60px;
-        width: calc(100% - 60px);
+        width: 95%;
+        padding-right: 20px; 
     }
     
 
@@ -405,12 +412,16 @@ tbody tr:nth-child(even) {
     }
 
     #sidebar-toggle:checked ~ .main-content { 
-        margin-left: 60px;
+        margin-left: 220px;
     }
     
     #sidebar-toggle:checked ~ .main-content header { 
-        left: 60px;
-        
+        padding-left: 200px;
+        padding-right: 20px;
+    }
+
+    .sidebar a span:first-child {
+        padding-left: 0;
     }
 }
 
@@ -432,6 +443,20 @@ tbody tr:nth-child(even) {
         margin-top: 1.5rem;
     }
 
+    .main-content header {
+        padding-right: 40px;
+    }
+
+    #sidebar-toggle:checked ~ .main-content { 
+        margin-left: 220px;
+        overflow-x: hidden;
+        object-fit: cover;
+    }
+    
+    #sidebar-toggle:checked ~ .main-content header { 
+        padding-left: 200px;
+        padding-right: 20px;
+    }
 }
 
 @media only screen and (max-width:600px) { 
@@ -444,6 +469,39 @@ tbody tr:nth-child(even) {
     main  {
         padding-left: 1rem;
         padding-right: 1rem;
-        
+    }
+
+    header .search-wrapper input {
+        width: 80px;
+    }
+
+    header {
+        justify-content: start;
+    }
+    
+    
+    #sidebar-toggle:checked ~ .sidebar {
+        width: 120px;
+    }
+
+    #sidebar-toggle:checked ~ .sidebar .sidebar-header .brand span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.8rem;
+    }
+
+    #sidebar-toggle:checked ~ .main-content { 
+        margin-left: 120px;
+    }
+    
+    #sidebar-toggle:checked ~ .main-content header { 
+        padding-left: 85px;
+        padding-right: 20px;
+        justify-content: start;
+    }
+
+    #sidebar-toggle:checked ~ header .search-wrapper input {
+        width: 80px;
     }
 }
